@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>TODO</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="static/js/jquery-3.4.1.js"></script>
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/todo.js"></script>
+
+</head>
+
+<body>
+  <!--
+    {% for todo in todoList %}
+        <div class="column">{{todo.todo}}</div>
+        <div class="column">{{todo.date}}</div>
+        {% if todo.done %}
+        <input type="checkbox" name="done" value="1" checked>
+        {% else %}
+        <input type="checkbox" name="done" value="0">
+        {% endif %}    
+    {% endfor %}
+!-->
+  <div id="divTodoList">
+
+  </div>
+
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Add a new To-Do</h5>
+        <div class="form-group">
+          <label>to-do</label>
+          <input type="newTodo" class="form-control" id="idNewTodo">
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="idCheckboxDone">
+          <label class="form-check-label" for="defaultCheck1">
+            Is it done?
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="addTodo()">Submit</button>
+    </div>
+  </div>
+
+
+
+  <!--
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+      <input type="checkbox" aria-label="Checkbox for following text input">
+    </div>
+  </div>
+  <input type="text" class="form-control" aria-label="todo">
+  <input data-provide="datepicker">
+</div>
+!-->
+</body>
+
+</html>
