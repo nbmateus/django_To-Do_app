@@ -17,52 +17,44 @@
 </head>
 
 <body>
-  <!--
-    {% for todo in todoList %}
-        <div class="column">{{todo.todo}}</div>
-        <div class="column">{{todo.date}}</div>
-        {% if todo.done %}
-        <input type="checkbox" name="done" value="1" checked>
-        {% else %}
-        <input type="checkbox" name="done" value="0">
-        {% endif %}    
-    {% endfor %}
-!-->
-  <div id="divTodoList">
 
-  </div>
+  <nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">To-Do App</a>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
 
-  <div class="card">
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="card" >
     <div class="card-body">
       <h5 class="card-title">Add a new To-Do</h5>
-        <div class="form-group">
-          <label>to-do</label>
-          <input type="newTodo" class="form-control" id="idNewTodo">
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="idCheckboxDone">
-          <label class="form-check-label" for="defaultCheck1">
-            Is it done?
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary" onclick="addTodo()">Submit</button>
+      <div class="form-group">
+        <label>to-do</label>
+        <input type="newTodo" class="form-control" id="idNewTodo">
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="idCheckboxDone">
+        <label class="form-check-label" for="defaultCheck1">
+          Is it done?
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary" onclick="addTodo()">Submit</button>
     </div>
   </div>
 
+  <div class="jumbotron jumbotron-fluid">
+    <div id="divTodoList" align="center">
 
-
-  <!--
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <div class="input-group-text">
-      <input type="checkbox" aria-label="Checkbox for following text input">
     </div>
   </div>
-  <input type="text" class="form-control" aria-label="todo">
-  <input data-provide="datepicker">
-</div>
-!-->
+
 </body>
 
 </html>

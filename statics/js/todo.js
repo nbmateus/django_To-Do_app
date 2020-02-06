@@ -16,7 +16,7 @@ function getTodoList() {
             var html = "";
             var divTodoList = document.getElementById("divTodoList");
             if (response.length == 0) {
-                html = "<div class='card w-100'><div class='card-body'><h5 class='card-title'>To-do list is empty.</h5></div></div>";
+                html = "<div class='card'><div class='card-body'><h5 class='card-title'>To-do list is empty.</h5></div></div>";
             } else {
                 for (var i = 0; i < response.length; i++) {
                     html += "<div class='card' style='width: 18rem;'><div class='card-body'><h5 class='card-title'>" + response[i].fields.todo + "</h5><h6 class='card-subtitle mb-2 text-muted'>" + response[i].fields.date + "</h6>";
