@@ -9,4 +9,7 @@ class Todo(models.Model):
     done = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.todo
+        return self.todo+", "+str(self.date)+", Done: "+str(self.done)
+
+class Usuario(object):
+    pass

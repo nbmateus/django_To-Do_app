@@ -12,7 +12,7 @@ def todo(request):
     return render(request, 'todo.html', {})
 
 def getTodoList(request):
-    return HttpResponse(serializers.serialize('json', Todo.objects.all()))
+    return HttpResponse(serializers.serialize('json', Todo.objects.all().order_by('-pk')))
 
 @csrf_exempt
 def deleteTodo(request):
