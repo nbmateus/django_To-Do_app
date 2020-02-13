@@ -23,5 +23,9 @@ urlpatterns = [
     path('getTodoList/',getTodoList),
     path('deleteTodo/',deleteTodo),
     path('addTodo/',addTodo),
-    path('updateTodo/',updateTodo)
+    path('updateTodo/',updateTodo),
+    path('login/',login),
+    path('signUp/',signUp),
+    path('signIn/',signIn),
+    path('signOut/',signOut)
 ]
