@@ -15,7 +15,7 @@ def todo(request):
     
 
 def getTodoList(request):
-    return HttpResponse(serializers.serialize('json', Todo.objects.all().order_by('-pk')))
+    return HttpResponse(serializers.serialize('json', Todo.objects.filter(user=request.user)))
 
 @csrf_exempt
 def deleteTodo(request):
@@ -28,7 +28,7 @@ def addTodo(request):
     if(request.POST["done"] == 'false'):
        done = False
 
-    newTodo = Todo.objects.create(todo=request.POST["todo"], done=done)
+    newTodo = Todo.objects.create(todo=request.POST["todo"], user=request.user, done=done)
     newTodo.save()
     return HttpResponse(202)
 
