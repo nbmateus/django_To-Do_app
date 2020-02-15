@@ -11,5 +11,4 @@ class Todo(models.Model):
     def __str__(self):
         return self.todo+", "+str(self.date)+", Done: "+str(self.done)
 
-class Usuario(object):
-    pass
+

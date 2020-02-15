@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todoapp',
+    'login',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'statics'),
 ]
+
+AUTH_USER_MODEL = 'login.User'

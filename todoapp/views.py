@@ -1,15 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
-
 
 
 from .models import Todo
 # Create your views here.
 
 def todo(request):
-    return render(request, 'todo.html', {})
+    if request.user.is_authenticated:
+        return render(request, 'todo.html', {'user':request.user})
+    else:
+        return redirect('/login/')
+    
 
 def getTodoList(request):
     return HttpResponse(serializers.serialize('json', Todo.objects.all().order_by('-pk')))
