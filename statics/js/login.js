@@ -36,4 +36,20 @@ $(document).ready(function () {
 
     });
 });
-*/
+
+
+function signupForm() {
+    var regForm = document.getElementById('idSignUpForm')
+    console.log("MANDO REG")
+    $.ajax({
+        type: regForm.attr('method'),
+        url: regForm.attr('action'),
+        data: regForm.serialize(),
+        success: function (data) {
+            regForm.innerHTML = "{% csrf_token %}{{ regForm }}";
+        },
+        error: function (data) {
+            console.log("error")
+        }
+    });
+});*/

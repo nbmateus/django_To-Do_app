@@ -52,8 +52,9 @@
 
                         <div class="tab-pane fade show active" id="login-content" role="tabpanel"
                             aria-labelledby="login-tab">
-                            <form action="/signIn/" method="POST">
+                            <form action="/login/" method="POST">
                                 <div class="form-group"></div>
+                                <!--
                                 <div class="form-group">
                                     <label>Username</label>
                                     <input type="text" class="form-control" id="idLogUser" name="username">
@@ -62,7 +63,15 @@
                                     <label>Password</label>
                                     <input type="password" class="form-control" id="idLogPass" name="password">
                                 </div>
-                                <button type="submit" value="submit" class="btn btn-primary" id='idLoginBtn'>Log
+                                -->
+                                {% csrf_token %}
+                                {{ logForm }}
+                                
+                                
+
+                                
+                                <div class="form-group"></div>
+                                <button type="submit" name="submit" value="login" class="btn btn-primary">Log
                                     In</button>
                             </form>
                         </div>
@@ -72,9 +81,10 @@
                         <!-- SIGNUP-->
 
                         <div class="tab-pane fade" id="signup-content" role="tabpanel" aria-labelledby="signup-tab">
-                            <form action="/signUp/" method="POST">
-                                
+                            <form action="/login/" method="POST">
                                 <div class="form-group"></div>
+                                <!--
+                                
                                 <div class="form-group">
                                     <label>Username</label>
                                     <input type="text" class="form-control" id="idSignUpUser" name="username">
@@ -87,11 +97,14 @@
                                     <label>Confirm Password</label>
                                     <input type="password" class="form-control" id="idSignUpPass2" name="password2">
                                 </div>
-                                <!--
+                                -->
                                 {% csrf_token %}
-                                {{ form }}-->
 
-                                <button type="submit" value="submit" class="btn btn-primary" id="idRegBtn">Sign
+
+
+                                {{ regForm }}
+                                <div class="form-group"></div>
+                                <button type="submit" name="submit" value="register" class="btn btn-primary">Sign
                                     Up</button>
                             </form>
                         </div>
