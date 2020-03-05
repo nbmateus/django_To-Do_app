@@ -57,7 +57,8 @@ function deleteTodo(idTodo) {
 function addTodo() {
     console.log("Entro aca JS");
     todo = document.getElementById("idNewTodo").value;
-    done = document.getElementById('idCheckboxDone').checked;
+    //done = document.getElementById('idCheckboxDone').checked;
+    done = false;
     console.log("Tengo esto: " + todo + "   " + done);
     $.ajax({
         url: "addTodo/",
@@ -67,7 +68,7 @@ function addTodo() {
             console.log("addTodo Succes: " + response);
             getTodoList();
             document.getElementById("idNewTodo").value = "";
-            document.getElementById('idCheckboxDone').checked = false;
+            //document.getElementById('idCheckboxDone').checked = false;
         },
         error: function (response) {
             console.log("addTodo Error: " + response)

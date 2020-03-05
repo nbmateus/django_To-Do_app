@@ -13,4 +13,8 @@ class Todo(models.Model):
     def __str__(self):
         return self.todo+", "+str(self.date)+", Done: "+str(self.done)
 
+class profile(models.Model):
+    discordUserId = models.CharField(max_length=20, unique=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+
 
